@@ -1,8 +1,13 @@
 [package]
 name = "either-both"
-version = "0.1.0"
+version = "1.0.0"
+description = "An enum similar to the well-known `Either`, but with a `Both` variant"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/spenserblack/either-both"
 edition = "2024"
 rust-version = "1.85.1"
+keywords = ["no-std"]
+categories = ["data-structures", "no-std"]
 exclude = [".editorconfig", ".gitignore"]
 
 [features]
@@ -17,3 +22,6 @@ either = { version = "1", optional = true, default-features = false }
 
 [dev-dependencies]
 rstest = "0.25"
+
+[package.metadata.docs.rs]
+features = ["either"]
