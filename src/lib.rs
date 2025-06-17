@@ -1093,6 +1093,54 @@ impl<L, R> Either<L, R> {
         }
     }
 
+    /// Returns true if a left value exists, or if the right value passes the predicate
+    /// `f`.
+    pub fn has_left_or<F>(&self, f: F) -> bool
+    where
+        F: FnOnce(&R) -> bool,
+    {
+        match self {
+            Left(_) | Both(_, _) => true,
+            Right(r) => f(r),
+        }
+    }
+
+    /// Returns true if the variant is `Left`, or if the right value passes the predicate
+    /// `f`.
+    pub fn is_left_or<F>(&self, f: F) -> bool
+    where
+        F: FnOnce(&R) -> bool,
+    {
+        match self {
+            Left(_) => true,
+            Right(r) | Both(_, r) => f(r),
+        }
+    }
+
+    /// Returns true if a right value exists, or if the left value passes the predicate
+    /// `f`.
+    pub fn has_right_or<F>(&self, f: F) -> bool
+    where
+        F: FnOnce(&L) -> bool,
+    {
+        match self {
+            Right(_) | Both(_, _) => true,
+            Left(l) => f(l),
+        }
+    }
+
+    /// Returns true if the variant is `Right`, or if the left value passes the predicate
+    /// `f`.
+    pub fn is_right_or<F>(&self, f: F) -> bool
+    where
+        F: FnOnce(&L) -> bool,
+    {
+        match self {
+            Left(l) | Both(l, _) => f(l),
+            Right(_) => true,
+        }
+    }
+
     /// Swaps the left and right values.
     ///
     /// ```rust
