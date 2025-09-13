@@ -8,7 +8,7 @@ edition = "2024"
 rust-version = "1.85.1"
 keywords = ["no-std"]
 categories = ["data-structures", "no-std"]
-exclude = [".editorconfig", ".gitignore"]
+exclude = [".editorconfig", ".github/", ".gitignore"]
 
 [features]
 default = ["std"]
