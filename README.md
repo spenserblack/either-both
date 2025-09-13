@@ -1,5 +1,7 @@
 # `either-both`
 
+[![Crates.io Version](https://img.shields.io/crates/v/either-both)](https://crates.io/crates/either-both)
+
 This crate is intended to be similar to [`either`][either-crate],
 but also cover the "both" variant.
 
