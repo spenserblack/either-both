@@ -6,7 +6,7 @@ This crate is intended to be similar to [`either`][either-crate],
 but also cover the "both" variant.
 
 This crate was inspired by wanting to implement a method similar to
-[`Iterator::zip`] that continues until *both* zipped iterators are exhausted.
+`Iterator::zip` that continues until *both* zipped iterators are exhausted.
 
 A common use case could be replacing the type `(Option<L>, Option<R>)` where
 the `(None, None)` variant is impossible.
